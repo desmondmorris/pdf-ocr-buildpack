@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+echo "-----> Installing Ghostscript, GraphicsMagick, and Tesseract-OCR"
+
+# Install Ghostscript
+curl -sSL https://ghostscript.com/releases/ghostscript-9.54.0.tar.gz | tar xz
+cd ghostscript-9.54.0
+./configure --prefix=/app/vendor/ghostscript && make install
+cd ..
+
+# Install GraphicsMagick
+curl -sSL https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.36/GraphicsMagick-1.3.36.tar.gz/download | tar xz
+cd GraphicsMagick-1.3.36
+./configure --prefix=/app/vendor/graphicsmagick && make install
+cd ..
+
+# Install Tesseract-OCR
+curl -sSL https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz | tar xz
+cd tesseract-4.1.1
+./autogen.sh && ./configure --prefix=/app/vendor/tesseract && make install
+cd ..
+
+echo "-----> Buildpack installation complete"

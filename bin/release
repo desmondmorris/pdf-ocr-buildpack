@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+export PATH="/app/vendor/ghostscript/bin:/app/vendor/graphicsmagick/bin:/app/vendor/tesseract/bin:$PATH"
+
+echo "-----> Setting PATH environment variables"
